@@ -132,23 +132,6 @@ client.on("messageCreate", async message => {
 
     }
 
-    const commandData = client.commands.get(command.slice(prefix.length));
-
-    if (!commandData) return;
-
-    var arguments = messageArray.slice(1);
-
-    try {
-
-        await commandData.run(client, message, arguments);
-
-    } catch (error) {
-
-        console.log(error);
-        await message.reply("Something went wrong with the command.")
-
-    }
-
 
 });
 
