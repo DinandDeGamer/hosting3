@@ -6,13 +6,13 @@ module.exports.run = async (bot, message, args) => {
 
     const amountStars = args[0];
 
-    if (!amountStars || amountStars < 1 || amountStars > 5) return message.reply("Geef een ster tussen de 1 en 5");
+    if (!amountStars || amountStars < 1 || amountStars > 5) return message.reply("Give a star between 1 and 5.");
 
-    const messageReview = args.splice(1, args.length).join(" ") || '**Geen bricht megegeven.**';
+    const messageReview = args.splice(1, args.length).join(" ") || '**Do not give a message.**';
 
-    const reviewChannel = message.member.guild.channels.cache.get("943914408688619630");
+    const reviewChannel = message.member.guild.channels.cache.get("951035271850369024");
 
-    if (!reviewChannel) return message.reply("Kanaal niet gevonden");
+    if (!reviewChannel) return message.reply("Channel not found.");
 
     var stars = "";
 
@@ -25,13 +25,13 @@ module.exports.run = async (bot, message, args) => {
     message.delete();
 
     const review = new discord.MessageEmbed()
-        .setTitle(`${message.author.username} heeft een review geschreven! 🎉`)
+        .setTitle(`${message.author.username} has written a review! 🎉`)
         .setColor("#00ff00")
         .setThumbnail("https://imgur.com/W45xcnA.png")
-        .addField("Sterren:", `${stars}`)
+        .addField("Stars:", `${stars}`)
         .addField("Review:", `${messageReview}`);
 
-    message.channel.send("✅ Je hebt een review gemaakt. 🌐")
+    message.channel.send("✅ You've made a review. 🌐")
 
     return reviewChannel.send({ embeds: [review] });
 

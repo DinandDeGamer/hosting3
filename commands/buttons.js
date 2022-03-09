@@ -52,7 +52,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
 
-    name: "knop",
+    name: "buttons",
     category: "general"
 
 }

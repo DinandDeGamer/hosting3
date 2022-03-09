@@ -10,9 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.7.0",
-    "canvacord": "^5.2.3",
-    "discord.js": "^13.6.0",
-    "ytdl-core": "^4.10.1"
+    "discord.js": "^13.6.0"
   }
 }

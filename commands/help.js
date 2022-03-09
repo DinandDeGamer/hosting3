@@ -7,7 +7,7 @@ module.exports.run = async (client, message) => {
         var prefix = botConfig.prefix;
 
         var respone = "**Bot commands**\r\n\n";
-        var general = "**__Algemeen__**\r\n";
+        var general = "**__General__**\r\n";
         var info = "**__Info__**\r\n";
         
         client.commands.forEach(command => {
@@ -30,16 +30,16 @@ module.exports.run = async (client, message) => {
 
         message.author.send(respone).then(() => {
 
-            return message.reply("Alle commands kan je vinden in je privé brichten.");
+            return message.reply("All commands can be found in your private messages.");
 
         }).catch(() => {
 
-            return message.reply("Je privé brichten staan uit!");
+            return message.reply("Your private messages are off!");
 
         })
 
     } catch (error) {
-        message.reply("Er is iets misgegaan.");
+        message.reply("Something went wrong.");
     }
 
 }

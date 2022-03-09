@@ -1,30 +1,30 @@
 module.exports.run = async (client, message, args) => {
 
-    if (!args[0]) return message.reply("Gelieve sps <steen, papier, schaar>");
+    if (!args[0]) return message.reply("Please sps <stone, paper, scissors>.");
 
-    var options = ["steen", "papier", "schaar"];
+    var options = ["stone", "paper", "scissors"];
 
     var result = options[Math.floor(Math.random() * options.length)];
 
     switch (args[0].toUpperCase()) {
 
-        case "STEEN":
+        case "STONE":
 
             switch (result) {
 
-                case "steen":
+                case "stone":
 
                     return message.channel.send(`Ik heb ${result} 🗿, het is gelijkspel.`);
 
                     break;
 
-                case "papier":
+                case "paper":
 
                     return message.channel.send(`Ik heb ${result} 🗒, ik win.`);
 
                     break;
 
-                case "schaar":
+                case "scissors":
 
                     return message.channel.send(`Ik heb ${result} ✂, jij wint.`);
 
@@ -33,24 +33,24 @@ module.exports.run = async (client, message, args) => {
 
             break;
 
-        case "PAPIER":
+        case "PAPER":
 
 
             switch (result) {
 
-                case "steen":
+                case "stone":
 
                     return message.channel.send(`Ik heb ${result} 🗿, jij wint.`);
 
                     break;
 
-                case "papier":
+                case "paper":
 
                     return message.channel.send(`Ik heb ${result} 🗒, het is gelijkspel.`);
 
                     break;
 
-                case "schaar":
+                case "scissors":
 
                     return message.channel.send(`Ik heb ${result} ✂, ik win.`);
 
@@ -59,25 +59,25 @@ module.exports.run = async (client, message, args) => {
 
             break;
 
-        case "SCHAAR":
+        case "SCISSORS":
 
 
 
             switch (result) {
 
-                case "steen":
+                case "stone":
 
                     return message.channel.send(`Ik heb ${result} 🗿, ik win.`);
 
                     break;
 
-                case "papier":
+                case "paper":
 
                     return message.channel.send(`Ik heb ${result} 🗒, jij wint.`);
 
                     break;
 
-                case "schaar":
+                case "scissors":
 
                     return message.channel.send(`Ik heb ${result} ✂, het is gelijkspel.`);
 
@@ -88,7 +88,7 @@ module.exports.run = async (client, message, args) => {
 
         default:
 
-            return message.channel.send("Gebruik steen, papier of schaar a.u.b.");
+            return message.channel.send("Please use stone paper or scissors.");
 
     }
 

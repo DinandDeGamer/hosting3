@@ -2,9 +2,9 @@ module.exports.run = async (client, message, args) => {
 
     // !clear aantal
 
-    if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.reply("Je hebt geen toegang voor dit commando.");
+    if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.reply("You do not have access to this command.");
 
-    if (!args[0]) return message.reply("Geef een aantal op dat je weg wilt halen.");
+    if (!args[0]) return message.reply("Enter a number that you want to take away.");
 
     if (parseInt(args[0])) {
 
@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 
             if (parseInt(args[0]) === 1) {
 
-                message.channel.send("Ik heb 1 bricht verwijderd.").then(msg => {
+                message.channel.send("I deleted 1 message.").then(msg => {
 
                     setTimeout(() => {
 
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
                 });
 
             } else {
-                message.channel.send(`Ik heb ${parseInt(args[0])} brichten verwijderd.`).then(msg => {
+                message.channel.send(`I deleted ${parseInt(args[0])} messages.`).then(msg => {
 
                     setTimeout(() => {
 
@@ -38,12 +38,12 @@ module.exports.run = async (client, message, args) => {
 
         }).catch(err => {
 
-            return message.reply("Geef een getal hoger dan 0.")
+            return message.reply("Enter a number greater than 0.")
 
         });
 
     } else {
-        return message.reply("Geef een getal op.");
+        return message.reply("Enter a number.");
     }
 
 }

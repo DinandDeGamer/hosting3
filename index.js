@@ -22,10 +22,10 @@ for (const file of commandFiles) {
 client.once("ready", () => {
 
     console.log(`${client.user.username} is online!`);
-    client.user.setActivity("Test", { type: "PLAYING" })
+    client.user.setActivity("Testing", { type: "PLAYING" })
 
     const statusOptions = [
-        "Hallo 🙌",
+        "Hello 🙌",
         "Hey 📲",
         "Yo 😎"
     ]
@@ -61,50 +61,6 @@ client.once("ready", () => {
 
 });
 
-client.on("interactionCreate", interaction => {
-
-    if (!interaction.isSelectMenu()) {
-
-        return;
-
-    }
-
-    const { customId, values, member } = interaction;
-
-    if (customId === 'roles') {
-
-        const component = interaction.component;
-
-        const removed = component.options.filter((option) => {
-
-            return !values.includes(option.value)
-
-        });
-
-        for (var id of removed) {
-
-            member.roles.remove(id.value)
-
-        }
-
-        for (var id of values) {
-
-            member.roles.add(id)
-
-        }
-
-        interaction.reply({
-
-            content: "Rollen geupdate!",
-
-            ephemeral: true
-
-        })
-
-    }
-
-});
-
 client.on("guildMemberAdd", member => {
 
     var role = member.guild.roles.cache.get("943165238067474463");
@@ -113,11 +69,11 @@ client.on("guildMemberAdd", member => {
 
     member.roles.add(role);
 
-    var channel = member.guild.channels.cache.get("942839046139432972");
+    var channel = member.guild.channels.cache.get("945389103749431337");
 
     if (!channel) return;
 
-    channel.send(`Welkom op de server, ${member}`);
+    channel.send(`Welcome to the server, ${member}`);
 
 })
 
@@ -143,7 +99,7 @@ client.on("messageCreate", async message => {
 
                 message.delete();
 
-                return await message.channel.send("Je mag niet schelden!").then(msg => {
+                return await message.channel.send("You can't curse!").then(msg => {
 
                     setTimeout(() => {
                         msg.delete()
@@ -170,7 +126,7 @@ client.on("messageCreate", async message => {
         } catch (error) {
 
             console.log(error);
-            await message.reply("Er is iets fout gegaan met het commando.")
+            await message.reply("Something went wrong with the command.")
 
         }
 
@@ -189,7 +145,7 @@ client.on("messageCreate", async message => {
     } catch (error) {
 
         console.log(error);
-        await message.reply("Er is iets fout gegaan met het commando.")
+        await message.reply("Something went wrong with the command.")
 
     }
 

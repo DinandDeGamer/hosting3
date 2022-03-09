@@ -2,7 +2,7 @@ module.exports.run = async (client, message, args) => {
 
     var number = Math.ceil(Math.random() * 6);
 
-    return message.channel.send(`Je hebt **${number}** gegooid!🎲`);
+    return message.channel.send(`You threw **${number}** 🎲`);
 
     
 
@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
 
-    name: "dobbel",
+    name: "dice",
     category: "general"
 
 }

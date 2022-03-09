@@ -1,15 +1,15 @@
 module.exports.run = async (client, message, args) => {
 
-    var values = ["Kop", "Munt"];
+    var values = ["Head", "Coin"];
 
     var result = values[Math.floor(Math.random() * values.length)];
 
-    return message.channel.send(`Je hebt **${result}** gekregen. 🔰`);
+    return message.channel.send(`You have **${result}** received!`);
 
 }
 
 module.exports.help = {
 
-    name: "KopOfMunt",
+    name: "HeadOrCoin",
     category: "general"
 }
